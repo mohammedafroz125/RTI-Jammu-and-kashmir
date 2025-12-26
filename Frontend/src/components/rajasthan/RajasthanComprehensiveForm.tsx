@@ -1,12 +1,12 @@
 /**
  * ============================================================================
- * RAJASTHAN COMPREHENSIVE RTI FORM
+ * JAMMU AND KASHMIR COMPREHENSIVE RTI FORM
  * ============================================================================
  * 
- * Purpose: Main RTI application form for Rajasthan homepage. Collects user
+ * Purpose: Main RTI application form for Jammu and Kashmir homepage. Collects user
  *          information and RTI query, then submits to backend API.
  * 
- * State Usage: Rajasthan (active) - Used only on homepage
+ * State Usage: Jammu and Kashmir (active) - Used only on homepage
  * 
  * Features:
  * - Multi-step form with validation
@@ -21,7 +21,7 @@
  * - Address (optional)
  * - RTI Query/Description
  * 
- * Used by: Home.tsx (Rajasthan homepage)
+ * Used by: Home.tsx (Jammu and Kashmir homepage)
  * ============================================================================
  */
 
@@ -104,8 +104,8 @@ export const RajasthanComprehensiveForm: React.FC = () => {
         mobile: data.mobile,
         address: data.address || null,
         pincode: data.pincode || null,
-        state_slug: 'rajasthan',
-        source: 'rajasthan_comprehensive_form'
+        state_slug: 'jammu-and-kashmir',
+        source: 'jammu-and-kashmir_comprehensive_form'
       });
 
       setShowSuccess(true);
@@ -187,13 +187,13 @@ export const RajasthanComprehensiveForm: React.FC = () => {
                   Book Your Free RTI Consultation
                 </h2>
                 <p className="text-base md:text-lg font-normal text-gray-600 mb-7 leading-relaxed">
-                  Talk to our RTI experts to understand whether your query qualifies under the Right to Information Act, 2005. Get guidance on the correct Rajasthan Government department before filing.
+                  Talk to our RTI experts to understand whether your query qualifies under the Right to Information Act, 2005. Get guidance on the correct Jammu and Kashmir Government department before filing.
                 </p>
 
                 <div className="space-y-4">
                   {[
                     "Free eligibility check for your RTI query",
-                    "Guidance on the correct Rajasthan department",
+                    "Guidance on the correct Jammu and Kashmir department",
                     "Expert advice on drafting RTI questions",
                     "No obligation to file immediately",
                   ].map((item) => (

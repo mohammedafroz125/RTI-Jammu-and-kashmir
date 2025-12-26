@@ -13,7 +13,7 @@ export const RajasthanFinalCTASection: React.FC = () => {
         </AnimatedSection>
         <AnimatedSection animation="fadeIn" delay={400}>
           <p className="text-base md:text-lg font-normal mb-8 max-w-2xl mx-auto opacity-90 leading-relaxed">
-            Join 50,000+ Rajasthan citizens who trust us with their RTI applications.
+            Join 50,000+ Jammu and Kashmir citizens who trust us with their RTI applications.
             Get started today and access government information transparently.
           </p>
         </AnimatedSection>

@@ -17,27 +17,35 @@ const ChevronDownIcon = ({ className }: { className?: string }) => (
 const faqs = [
   {
     question: "What is RTI and who can file it?",
-    answer: "RTI (Right to Information) is a fundamental right under the RTI Act 2005 that allows any Indian citizen to request information from public authorities. Any person can file an RTI application to seek information about government activities, decisions, and public expenditure.",
+    answer: "RTI (Right to Information) is a fundamental right under the RTI Act 2005 that allows any Indian citizen to request information from public authorities. You can file RTI applications to seek information about government activities, decisions, public expenditure, and services provided by Jammu and Kashmir government departments.",
   },
   {
-    question: "What is the fee for filing an RTI application in Rajasthan?",
-    answer: "The RTI application fee in Rajasthan is ₹10 for state departments. BPL (Below Poverty Line) cardholders are exempted from paying fees. Additional charges may apply for photocopies and other information formats.",
+    question: "What is the fee for filing an RTI application in Jammu and Kashmir?",
+    answer: "The RTI application fee in Jammu and Kashmir is ₹10 for state departments. BPL (Below Poverty Line) cardholders are exempted from paying fees. Additional charges may apply for photocopies (₹2 per page) and other information formats.",
   },
   {
     question: "How long does it take to receive a response?",
     answer: "As per the RTI Act, the concerned Public Information Officer (PIO) must provide information within 30 days from the date of receipt. For matters concerning life and liberty, the response must be given within 48 hours.",
   },
   {
-    question: "Can I file RTI anonymously?",
-    answer: "Yes, we offer anonymous RTI filing services where your identity is protected throughout the process. Our team files the application on behalf of our organization, ensuring your privacy while exercising your right to information.",
+    question: "Do I need to visit any government office to file RTI?",
+    answer: "No. The RTI filing process can be completed fully online with assistance from FileMyRTI. We handle all the paperwork, submission, and fee payment for you without requiring you to visit any government office.",
   },
   {
-    question: "Which departments can I file RTI applications for?",
-    answer: "You can file RTI applications for all Rajasthan Government departments including Revenue, Police, Education, Health, PWD, Panchayati Raj, Urban Development, and many more. We cover all state and central government departments operating in Rajasthan.",
+    question: "Which Jammu and Kashmir departments can I file RTI applications for?",
+    answer: "You can file RTI applications for all Jammu and Kashmir Government departments including General Administration, Home, Finance, Revenue, School Education, Higher Education, Health & Medical Education, Public Works (R&B), Power Development, Jal Shakti, Agriculture, Forest & Environment, Industries & Commerce, Tourism, Housing & Urban Development, Rural Development & Panchayati Raj, Social Welfare, Labour & Employment, Transport, and many more.",
   },
   {
     question: "What documents do I need to file an RTI?",
     answer: "For filing an RTI, you primarily need to clearly describe the information you're seeking. No identity proof is mandatory for filing, but having Aadhaar or voter ID helps for communication purposes. For BPL fee exemption, you'll need your BPL card.",
+  },
+  {
+    question: "Can I file RTI anonymously?",
+    answer: "Yes, we offer anonymous RTI filing services where your identity is protected throughout the process. Our team files the application on behalf of our organization, ensuring your privacy while exercising your right to information.",
+  },
+  {
+    question: "Can I file RTI from outside Jammu and Kashmir?",
+    answer: "Yes, you can file an RTI for Jammu and Kashmir departments from anywhere in India. The application can be sent by post or submitted online. You don't need to be physically present in Jammu and Kashmir to file an RTI application.",
   },
 ];
 
@@ -57,7 +65,7 @@ export const RajasthanEnhancedFAQ: React.FC = () => {
               Got Questions? We Have Answers
             </h2>
             <p className="text-base md:text-lg font-normal text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Everything you need to know about RTI filing in Rajasthan
+              Everything you need to know about RTI filing in Jammu and Kashmir
             </p>
           </div>
         </AnimatedSection>

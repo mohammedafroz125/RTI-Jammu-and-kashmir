@@ -19,7 +19,7 @@
  * - Graceful degradation (works offline)
  * - Performance optimized (delayed API calls)
  * 
- * Used by: Home.tsx (Rajasthan), StatePage.tsx (all other states)
+ * Used by: Home.tsx (Jammu and Kashmir), StatePage.tsx (all other states)
  * ============================================================================
  */
 

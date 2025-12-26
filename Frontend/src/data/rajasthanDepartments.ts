@@ -1,116 +1,113 @@
 /**
- * Rajasthan Departments organized by sections
+ * Jammu and Kashmir Departments organized by sections
  * Used for RTI department listing page
  * Structure matches Telangana/Delhi format for consistent rendering
  */
 
-export interface RajasthanDepartmentSection {
+export interface JammuAndKashmirDepartmentSection {
   category: string;
   items: string[];
 }
 
-export const rajasthanDepartments: RajasthanDepartmentSection[] = [
+export const jammuAndKashmirDepartments: JammuAndKashmirDepartmentSection[] = [
   {
-    category: 'RTI Rajasthan Police & Home Affairs',
+    category: 'RTI Jammu and Kashmir General Administration & Home Affairs',
     items: [
-      'RTI Rajasthan Home Department',
-      'RTI Rajasthan Police Department',
-      'RTI Rajasthan Anti-Corruption Bureau (ACB)',
-      'RTI Rajasthan Prisons Department',
-      'RTI Rajasthan Prosecution Department',
-      'RTI Rajasthan Disaster Management & Relief Department',
+      'RTI Jammu and Kashmir General Administration Department',
+      'RTI Jammu and Kashmir Home Department',
+      'RTI Jammu and Kashmir Police Department',
+      'RTI Jammu and Kashmir Prisons Department',
+      'RTI Jammu and Kashmir Law, Justice & Parliamentary Affairs Department',
+      'RTI Jammu and Kashmir Disaster Management, Relief, Rehabilitation & Reconstruction Department',
+      'RTI Jammu and Kashmir Election Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Finance, Tax & Revenue',
+    category: 'RTI Jammu and Kashmir Finance, Planning & Revenue',
     items: [
-      'RTI Rajasthan Finance Department',
-      'RTI Rajasthan Revenue Department',
-      'RTI Rajasthan Commercial Taxes (GST) Department',
-      'RTI Rajasthan Registration & Stamps Department',
-      'RTI Rajasthan Treasuries & Accounts Department',
-      'RTI Rajasthan Excise Department',
+      'RTI Jammu and Kashmir Finance Department',
+      'RTI Jammu and Kashmir Planning, Development & Monitoring Department',
+      'RTI Jammu and Kashmir Revenue Department',
+      'RTI Jammu and Kashmir Excise & Taxation Department',
+      'RTI Jammu and Kashmir Registration & Stamps Department',
+      'RTI Jammu and Kashmir Treasuries & Accounts Department',
+      'RTI Jammu and Kashmir Estates Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Transport & Public Infrastructure',
+    category: 'RTI Jammu and Kashmir Education & Skill Development',
     items: [
-      'RTI Rajasthan Transport Department',
-      'RTI Rajasthan Public Works Department (PWD)',
-      'RTI Rajasthan Urban Development Department',
-      'RTI Rajasthan Local Self Government Department',
-      'RTI Rajasthan Jaipur Development Authority (JDA)',
-      'RTI Rajasthan Rajasthan State Road Development Corporation',
+      'RTI Jammu and Kashmir School Education Department',
+      'RTI Jammu and Kashmir Higher Education Department',
+      'RTI Jammu and Kashmir Technical Education Department',
+      'RTI Jammu and Kashmir Skill Development Department',
+      'RTI Jammu and Kashmir Youth Services & Sports Department',
+      'RTI Jammu and Kashmir Science & Technology Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Education, Skill & Health',
+    category: 'RTI Jammu and Kashmir Health & Medical Services',
     items: [
-      'RTI Rajasthan School Education Department',
-      'RTI Rajasthan Higher Education Department',
-      'RTI Rajasthan Technical Education Department',
-      'RTI Rajasthan Medical & Health Department',
-      'RTI Rajasthan Medical Education Department',
-      'RTI Rajasthan Skill, Employment & Entrepreneurship Department',
+      'RTI Jammu and Kashmir Health & Medical Education Department',
+      'RTI Jammu and Kashmir AYUSH Department',
+      'RTI Jammu and Kashmir Food, Civil Supplies & Consumer Affairs Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Agriculture, Animal & Rural Development',
+    category: 'RTI Jammu and Kashmir Infrastructure & Development',
     items: [
-      'RTI Rajasthan Agriculture Department',
-      'RTI Rajasthan Horticulture Department',
-      'RTI Rajasthan Animal Husbandry Department',
-      'RTI Rajasthan Rural Development Department',
-      'RTI Rajasthan Panchayati Raj Department',
-      'RTI Rajasthan Watershed Development Department',
+      'RTI Jammu and Kashmir Public Works (R&B) Department',
+      'RTI Jammu and Kashmir Housing & Urban Development Department',
+      'RTI Jammu and Kashmir Transport Department',
+      'RTI Jammu and Kashmir Power Development Department',
+      'RTI Jammu and Kashmir Jal Shakti Department',
+      'RTI Jammu and Kashmir Rural Development Department',
+      'RTI Jammu and Kashmir Panchayati Raj Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Social Justice & Welfare',
+    category: 'RTI Jammu and Kashmir Agriculture & Rural Economy',
     items: [
-      'RTI Rajasthan Social Justice & Empowerment Department',
-      'RTI Rajasthan Women & Child Development Department',
-      'RTI Rajasthan Minority Affairs Department',
-      'RTI Rajasthan Labour Department',
-      'RTI Rajasthan Empowerment of Persons with Disabilities Department',
+      'RTI Jammu and Kashmir Agriculture Production & Farmer Welfare Department',
+      'RTI Jammu and Kashmir Horticulture Department',
+      'RTI Jammu and Kashmir Animal & Sheep Husbandry Department',
+      'RTI Jammu and Kashmir Cooperative Department',
+      'RTI Jammu and Kashmir Fisheries Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Industries, Mines & MSME',
+    category: 'RTI Jammu and Kashmir Industries, Commerce & Tourism',
     items: [
-      'RTI Rajasthan Industries Department',
-      'RTI Rajasthan MSME & Export Promotion Department',
-      'RTI Rajasthan Mines & Geology Department',
-      'RTI Rajasthan RIICO (Industrial Development)',
-      'RTI Rajasthan Handloom & Handicrafts Department',
+      'RTI Jammu and Kashmir Industries & Commerce Department',
+      'RTI Jammu and Kashmir Handloom & Handicrafts Department',
+      'RTI Jammu and Kashmir Tourism Department',
+      'RTI Jammu and Kashmir Geology & Mining Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Environment, Water & Energy',
+    category: 'RTI Jammu and Kashmir Environment & Forest',
     items: [
-      'RTI Rajasthan Forest Department',
-      'RTI Rajasthan Environment Department',
-      'RTI Rajasthan Water Resources Department',
-      'RTI Rajasthan Public Health Engineering Department (PHED)',
-      'RTI Rajasthan Renewable Energy Corporation (RRECL)',
+      'RTI Jammu and Kashmir Forest, Ecology & Environment Department',
+      'RTI Jammu and Kashmir Wildlife Protection Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Information, IT & Public Relations',
+    category: 'RTI Jammu and Kashmir Social Welfare & Employment',
     items: [
-      'RTI Rajasthan Information Technology & Communication Department',
-      'RTI Rajasthan DoIT&C',
-      'RTI Rajasthan e-Governance Services',
-      'RTI Rajasthan Information & Public Relations Department',
+      'RTI Jammu and Kashmir Social Welfare Department',
+      'RTI Jammu and Kashmir Labour & Employment Department',
+      'RTI Jammu and Kashmir Tribal Affairs Department',
+      'RTI Jammu and Kashmir Backward Classes & Minorities Department',
     ],
   },
   {
-    category: 'RTI Rajasthan Culture, Tourism & Religious Affairs',
+    category: 'RTI Jammu and Kashmir Information Technology & Culture',
     items: [
-      'RTI Rajasthan Tourism Department',
-      'RTI Rajasthan Art, Culture & Archaeology Department',
-      'RTI Rajasthan Devasthan (Temple) Department',
-      'RTI Rajasthan Archives Department',
+      'RTI Jammu and Kashmir Information Technology Department',
+      'RTI Jammu and Kashmir e-Governance Department',
+      'RTI Jammu and Kashmir Information & Public Relations Department',
+      'RTI Jammu and Kashmir Culture Department',
+      'RTI Jammu and Kashmir Archives, Archaeology & Museums Department',
     ],
   },
 ];

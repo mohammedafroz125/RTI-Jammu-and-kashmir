@@ -147,21 +147,21 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
       // Download the PDF - try multiple approaches
       // Extract state, category and filename from pdfPath
       // Format for Delhi/Telangana: "state/category/filename.pdf"
-      // Format for Rajasthan: "RTI_Rajasthan_All_Departments_FINAL/filename.pdf"
+      // Format for Jammu and Kashmir: "RTI_Jammu_and_Kashmir_All_Departments_FINAL/filename.pdf"
       const pathParts = pdfPath.split('/');
-      const isRajasthan = pathParts[0] === 'RTI_Rajasthan_All_Departments_FINAL';
-      const state = isRajasthan ? 'rajasthan' : pathParts[0]; // e.g., "delhi", "telangana", or "rajasthan"
-      const category = isRajasthan ? '' : encodeURIComponent(pathParts[1]);
-      const filename = isRajasthan ? encodeURIComponent(pathParts[1]) : encodeURIComponent(pathParts[2]);
+      const isJammuAndKashmir = pathParts[0] === 'RTI_Jammu_and_Kashmir_All_Departments_FINAL';
+      const state = isJammuAndKashmir ? 'jammu-and-kashmir' : pathParts[0]; // e.g., "delhi", "telangana", or "jammu-and-kashmir"
+      const category = isJammuAndKashmir ? '' : encodeURIComponent(pathParts[1]);
+      const filename = isJammuAndKashmir ? encodeURIComponent(pathParts[1]) : encodeURIComponent(pathParts[2]);
 
       let downloadSuccess = false;
       let lastError: Error | null = null;
 
       // Approach 1: Try backend API (with timeout)
       try {
-        // For Rajasthan, use the flat folder structure
-        const apiUrl = isRajasthan 
-          ? `${apiBaseUrl}/api/v1/pdf/rajasthan/${pathParts[0]}/${filename}`
+        // For Jammu and Kashmir, use the flat folder structure
+        const apiUrl = isJammuAndKashmir 
+          ? `${apiBaseUrl}/api/v1/pdf/jammu-and-kashmir/${pathParts[0]}/${filename}`
           : `${apiBaseUrl}/api/v1/pdf/${state}/${category}/${filename}`;
 
         // Create a timeout promise
@@ -179,7 +179,7 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
           const blob = await response.blob();
           const url = window.URL.createObjectURL(blob);
           const downloadFilename = departmentName
-            .replace(/RTI\s+(Delhi|Telangana|Rajasthan)\s+/gi, '')
+            .replace(/RTI\s+(Delhi|Telangana|Jammu and Kashmir)\s+/gi, '')
             .replace(/\s+/g, '_')
             .concat('.pdf');
 
@@ -208,9 +208,9 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
       // Approach 2: Try public folder (if PDFs are copied there)
       if (!downloadSuccess) {
         try {
-          // For Rajasthan, use the flat folder structure
+          // For Jammu and Kashmir, use the flat folder structure
           const decodedFilename = decodeURIComponent(filename);
-          const publicPath = isRajasthan
+          const publicPath = isJammuAndKashmir
             ? `/assets/PDF/${pathParts[0]}/${decodedFilename}`
             : `/assets/PDF/${state}/${decodeURIComponent(category)}/${decodedFilename}`;
 
@@ -228,20 +228,20 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
       // Approach 3: Try direct import (for development)
       if (!downloadSuccess) {
         try {
-          // For Rajasthan, PDFs are in public folder, not src/assets
-          // So we'll skip direct import for Rajasthan and use public path instead
-          if (isRajasthan) {
+          // For Jammu and Kashmir, PDFs are in public folder, not src/assets
+          // So we'll skip direct import for Jammu and Kashmir and use public path instead
+          if (isJammuAndKashmir) {
             const decodedFilename = decodeURIComponent(filename);
             const publicPath = `/assets/PDF/${pathParts[0]}/${decodedFilename}`;
             window.open(publicPath, '_blank');
             downloadSuccess = true;
-            console.log('Successfully opened Rajasthan PDF from public folder');
+            console.log('Successfully opened Jammu and Kashmir PDF from public folder');
           } else {
             // Use dynamic import for Vite (for Delhi/Telangana)
             const pdfModule = await import(`../../assets/PDF/${pdfPath}`);
             const pdfUrl = pdfModule.default || pdfModule;
             const downloadFilename = departmentName
-              .replace(/RTI\s+(Delhi|Telangana|Rajasthan)\s+/gi, '')
+              .replace(/RTI\s+(Delhi|Telangana|Jammu and Kashmir)\s+/gi, '')
               .replace(/\s+/g, '_')
               .concat('.pdf');
 

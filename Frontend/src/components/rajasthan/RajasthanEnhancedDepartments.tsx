@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { rajasthanDepartments } from '../../data/rajasthanDepartments';
+import { jammuAndKashmirDepartments } from '../../data/rajasthanDepartments';
 import { AnimatedSection } from '../common/AnimatedSection';
 import { hasPDF } from '../../utils/pdfMapping';
 import { PDFDownloadModal } from '../common/PDFDownloadModal';
@@ -35,10 +35,10 @@ export const RajasthanEnhancedDepartments: React.FC = () => {
           <AnimatedSection animation="fadeIn" delay={200}>
             <div className="text-center mb-6">
               <h2 className="text-2xl md:text-3xl font-serif font-semibold text-gray-900 tracking-wide mb-4">
-                RTI Templates for Rajasthan Departments
+                RTI Templates for Jammu and Kashmir Departments
               </h2>
               <p className="text-sm md:text-base font-normal text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                File RTI applications for all Rajasthan Government departments and public authorities
+                File RTI applications for all Jammu and Kashmir Government departments and public authorities
               </p>
             </div>
           </AnimatedSection>
@@ -46,7 +46,7 @@ export const RajasthanEnhancedDepartments: React.FC = () => {
           <AnimatedSection animation="fadeIn" delay={400}>
             <div className="bg-white rounded-lg border border-gray-200 shadow-lg p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                {rajasthanDepartments.map((category, index) => (
+                {jammuAndKashmirDepartments.map((category, index) => (
                   <AnimatedSection key={category.category} animation="slideUp" delay={500 + index * 50}>
                     <div>
                       <h3 className="font-semibold text-xs leading-none mb-1" style={{ color: '#0267AD' }}>

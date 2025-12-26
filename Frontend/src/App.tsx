@@ -13,13 +13,13 @@
  * - Provides HelmetProvider for SEO meta tag management
  * 
  * Routing Structure:
- * - "/" → Home page (Rajasthan-specific homepage)
+ * - "/" → Home page (Jammu and Kashmir-specific homepage)
  * - "/state/:stateSlug" → Dynamic state pages (Telangana, Delhi, etc.)
  * - "/services/*" → RTI service detail pages
  * - Other routes → Static pages (About, Contact, FAQ, etc.)
  * 
  * State-Specific Behavior:
- * - Homepage ("/") is hardcoded to Rajasthan
+ * - Homepage ("/") is hardcoded to Jammu and Kashmir
  * - State pages use dynamic routing with state-specific components
  * - All state data is managed via useStateData hook
  * 

@@ -34,7 +34,7 @@ const features = [
 export const RajasthanWhatsAppHelp: React.FC = () => {
   // Replace with actual WhatsApp number
   const whatsappNumber = "919876543210";
-  const whatsappMessage = encodeURIComponent("I need help with RTI filing in Rajasthan.");
+  const whatsappMessage = encodeURIComponent("I need help with RTI filing in Jammu and Kashmir.");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (

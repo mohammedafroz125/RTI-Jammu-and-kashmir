@@ -6,10 +6,12 @@ export const RajasthanDepartmentsCoveredSection: React.FC = () => {
   const animationFrameRef = useRef<number>();
 
   const departments = [
-    "Home Department", "Police Department", "Revenue Department", "Education Department",
-    "Health Department", "Transport Department", "Urban Development", "Rural Development",
-    "Public Works Department", "Water Resources", "Energy Department", "Agriculture Department",
-    "Finance Department", "Law Department", "Food & Civil Supplies", "Tourism Department"
+    "General Administration", "Home Department", "Police Department", "Revenue Department",
+    "Finance Department", "Planning & Development", "School Education", "Higher Education",
+    "Health & Medical Education", "Public Works (R&B)", "Power Development", "Jal Shakti",
+    "Agriculture Production", "Horticulture", "Forest & Environment", "Industries & Commerce",
+    "Tourism Department", "Housing & Urban Development", "Rural Development & Panchayati Raj",
+    "Social Welfare", "Labour & Employment", "Transport Department", "Information Technology"
   ];
 
   // Duplicate departments for seamless infinite scroll
@@ -55,9 +57,9 @@ export const RajasthanDepartmentsCoveredSection: React.FC = () => {
       <div className="container-responsive max-w-7xl mx-auto px-4">
         <AnimatedSection animation="fadeIn" delay={200}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 tracking-wide mb-6">Rajasthan Departments Covered</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 tracking-wide mb-6">Jammu and Kashmir Departments Covered</h2>
             <p className="text-base md:text-lg font-normal text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We handle RTI applications across all Rajasthan government departments with state-specific expertise.
+              We handle RTI applications across all Jammu and Kashmir government departments with state-specific expertise.
             </p>
           </div>
         </AnimatedSection>

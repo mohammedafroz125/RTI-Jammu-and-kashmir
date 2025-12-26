@@ -1,16 +1,16 @@
 /**
  * ============================================================================
- * HOMEPAGE - RAJASTHAN-SPECIFIC
+ * HOMEPAGE - JAMMU AND KASHMIR-SPECIFIC
  * ============================================================================
  * 
  * Purpose: Main landing page for the RTI platform, specifically configured
- *          for Rajasthan state.
+ *          for Jammu and Kashmir state.
  * 
- * State Usage: Rajasthan (active) - This is the primary homepage
+ * State Usage: Jammu and Kashmir (active) - This is the primary homepage
  * 
  * Key Features:
- * - Hardcoded to use Rajasthan state data
- * - Uses lazy-loaded Rajasthan-specific components
+ * - Hardcoded to use Jammu and Kashmir state data
+ * - Uses lazy-loaded Jammu and Kashmir-specific components
  * - Implements conversion-first layout with trust signals
  * - Comprehensive SEO optimization with structured data
  * 
@@ -33,7 +33,7 @@
  * - Uses useDeferredValue for non-critical state updates
  * - Static data fallback ensures immediate rendering
  * 
- * Used by: Rajasthan (homepage route "/")
+ * Used by: Jammu and Kashmir (homepage route "/")
  * ============================================================================
  */
 
@@ -46,8 +46,8 @@ import { LazyChatbot } from '../components/common/LazyChatbot';
 const Navbar = lazy(() => import('../components/common/Navbar').then(m => ({ default: m.Navbar })));
 const Footer = lazy(() => import('../components/common/Footer').then(m => ({ default: m.Footer })));
 
-// ====== RAJASTHAN-SPECIFIC COMPONENTS (Lazy Loaded) ======
-// All Rajasthan components are state-specific and used only on homepage
+// ====== JAMMU AND KASHMIR-SPECIFIC COMPONENTS (Lazy Loaded) ======
+// All Jammu and Kashmir components are state-specific and used only on homepage
 const RajasthanHero = lazy(() => import('../components/rajasthan/RajasthanHero').then(m => ({ default: m.RajasthanHero })));
 const RajasthanTrustStrip = lazy(() => import('../components/rajasthan/RajasthanTrustStrip').then(m => ({ default: m.RajasthanTrustStrip })));
 const RajasthanDepartmentsCoveredSection = lazy(() => import('../components/rajasthan/RajasthanDepartmentsCoveredSection').then(m => ({ default: m.RajasthanDepartmentsCoveredSection })));
@@ -63,8 +63,8 @@ const RajasthanEnhancedServices = lazy(() => import('../components/rajasthan/Raj
 
 export const Home: React.FC = () => {
   // ====== STATE DATA MANAGEMENT ======
-  // Homepage is hardcoded to Rajasthan state
-  const { stateData, isLoading } = useStateData('rajasthan');
+  // Homepage is hardcoded to Jammu and Kashmir state
+  const { stateData, isLoading } = useStateData('jammu-and-kashmir');
   
   // Defer non-critical state updates to reduce Total Blocking Time (TBT)
   const deferredStateData = useDeferredValue(stateData);
@@ -115,8 +115,8 @@ export const Home: React.FC = () => {
   const dataToUse = deferredStateData || stateData;
 
   // ====== SEO METADATA ======
-  const pageTitle = `File RTI Online in Rajasthan - FileMyRTI`;
-  const pageDescription = `File RTI online in Rajasthan with FileMyRTI. Get expert-drafted RTI applications and appeals for Rajasthan Government departments, Secretariat and district offices from home.`;
+  const pageTitle = `File RTI Online in Jammu and Kashmir - FileMyRTI`;
+  const pageDescription = `File RTI online in Jammu and Kashmir with FileMyRTI. Get expert-drafted RTI applications and appeals for Jammu and Kashmir Government departments, Secretariat and district offices from home.`;
   const canonicalUrl = typeof window !== 'undefined' ? window.location.href : `https://filemyrti.com/`;
   const ogImage = `https://filemyrti.com/src/assets/icons/logo.webp`;
 
@@ -209,7 +209,7 @@ export const Home: React.FC = () => {
             <div className="bg-primary-600 pt-12 pb-12" data-loading>
               <div className="container-responsive max-w-7xl mx-auto px-4">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                  File RTI Online for Rajasthan Government Departments
+                  File RTI Online for Jammu and Kashmir Government Departments
                 </h1>
               </div>
             </div>
@@ -257,12 +257,12 @@ export const Home: React.FC = () => {
             <RajasthanWhatsAppHelp />
           </Suspense>
 
-          {/* 13. List of Rajasthan government departments supported */}
+          {/* 13. List of Jammu and Kashmir government departments supported */}
           <Suspense fallback={<div className="min-h-[400px]" />}>
             <RajasthanDepartmentsCoveredSection />
           </Suspense>
 
-          {/* 9. RTI Templates for Rajasthan (letter templates/resources) */}
+          {/* 9. RTI Templates for Jammu and Kashmir (letter templates/resources) */}
           <Suspense fallback={<div className="min-h-[400px]" />}>
             <RajasthanEnhancedDepartments />
           </Suspense>

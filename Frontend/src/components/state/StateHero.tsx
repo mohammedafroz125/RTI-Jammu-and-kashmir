@@ -10,7 +10,6 @@ import FirstIcon from '../../assets/images/FirstIcon.webp';
 import BulkIcon from '../../assets/images/BulkIcon.webp';
 import CustomIcon from '../../assets/images/CustomIcon.webp';
 import Icon15min from '../../assets/images/15minIcon.webp';
-import HeroSectionBg from '../../assets/images/Hero_section.jpg';
 
 // Add fade-in animation styles
 const fadeInStyle = `
@@ -455,7 +454,7 @@ const StateHeroComponent: React.FC<StateHeroProps> = ({ hero: _hero, stateName, 
           className="hidden lg:block absolute top-0 left-0 right-0 h-[94vh] pointer-events-none z-1"
           aria-hidden="true"
           style={{
-            backgroundImage: `url(${HeroSectionBg})`,
+            backgroundImage: `url('/images/kashmir.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

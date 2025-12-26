@@ -6,7 +6,7 @@
  * Purpose: Generic state page that dynamically renders content based on
  *          state slug (Telangana, Delhi, etc.). Uses shared state components.
  * 
- * State Usage: All states except Rajasthan (which uses Home.tsx)
+ * State Usage: All states except Jammu and Kashmir (which uses Home.tsx)
  * 
  * Routing:
  * - "/state/:stateSlug" → Renders this component
@@ -15,7 +15,7 @@
  * 
  * Key Differences from Home.tsx:
  * - Uses generic StateHero, StateDepartments, StateProcess components
- * - Not Rajasthan-specific (Home.tsx is Rajasthan-only)
+ * - Not Jammu and Kashmir-specific (Home.tsx is Jammu and Kashmir-only)
  * - Supports multiple states via dynamic routing
  * 
  * Component Structure:

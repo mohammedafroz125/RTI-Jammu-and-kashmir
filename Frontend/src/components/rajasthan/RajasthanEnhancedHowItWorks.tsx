@@ -76,7 +76,7 @@ export const RajasthanEnhancedHowItWorks: React.FC = () => {
             </h2>
             <p className="text-base md:text-lg font-normal text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Filing an RTI application is simple. Follow these four easy steps to get 
-              the information you need from Rajasthan Government departments.
+              the information you need from Jammu and Kashmir Government departments.
             </p>
           </div>
         </AnimatedSection>

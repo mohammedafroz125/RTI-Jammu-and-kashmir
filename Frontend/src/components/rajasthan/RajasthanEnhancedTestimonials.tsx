@@ -11,21 +11,21 @@ const testimonials = [
   {
     quote: "The RTI service helped me get my land records within 30 days. The process was simple and the team guided me throughout. Highly recommended.",
     name: "Ramesh Kumar",
-    location: "Jaipur, Rajasthan",
+    location: "Srinagar, Jammu and Kashmir",
     role: "Farmer",
     image: "/images/rajasthan2.webp"
   },
   {
     quote: "I was struggling to get information about government schemes. With this RTI service, I received all details about subsidy programs in my district.",
     name: "Sunita Devi",
-    location: "Jodhpur, Rajasthan",
+    location: "Jammu, Jammu and Kashmir",
     role: "Social Worker",
     image: "/images/rajasthan1.webp"
   },
   {
     quote: "Professional and reliable service. They helped me file an RTI about road construction funds in my village. The response came within the stipulated time.",
     name: "Mahendra Singh",
-    location: "Udaipur, Rajasthan",
+    location: "Anantnag, Jammu and Kashmir",
     role: "Retired Teacher",
     image: "/images/rajasthan3.webp"
   }
@@ -41,7 +41,7 @@ export const RajasthanEnhancedTestimonials: React.FC = () => {
               What Citizens Say
             </h2>
             <p className="text-base md:text-lg font-normal text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Thousands of Rajasthan citizens have successfully obtained government 
+              Thousands of Jammu and Kashmir citizens have successfully obtained government 
               information through our RTI filing service.
             </p>
           </div>

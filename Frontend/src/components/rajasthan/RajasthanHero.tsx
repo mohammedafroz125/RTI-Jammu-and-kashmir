@@ -11,11 +11,11 @@ export const RajasthanHero: React.FC<RajasthanHeroProps> = () => {
 
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex items-center" style={{ backgroundColor: '#1a2332', marginTop: 0, paddingTop: '64px' }}>
-      {/* Hawa Mahal Background Image - Positioned to show palace prominently on left */}
+      {/* Kashmir Background Image - Positioned to show landscape prominently on left */}
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url('/images/hawa%20mahal.webp')`,
+          backgroundImage: `url('/images/kashmir.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
           backgroundRepeat: 'no-repeat',
@@ -44,7 +44,7 @@ export const RajasthanHero: React.FC<RajasthanHeroProps> = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 <p className="text-sm md:text-base text-white font-medium">
-                  Official RTI Filing Service for Rajasthan
+                  Official RTI Filing Service for Jammu and Kashmir
                 </p>
               </div>
             </div>
@@ -53,14 +53,14 @@ export const RajasthanHero: React.FC<RajasthanHeroProps> = () => {
           {/* Main Heading */}
           <AnimatedSection animation="slideUp" delay={300}>
             <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-              File RTI Online in <span style={{ color: '#CFE4F7', fontWeight: 800, letterSpacing: '0.5px' }}>Rajasthan</span>
+              File RTI Online in <span style={{ color: '#CFE4F7', fontWeight: 800, letterSpacing: '0.5px' }}>Jammu and Kashmir</span>
             </h1>
           </AnimatedSection>
           
           {/* Description */}
           <AnimatedSection animation="slideUp" delay={400}>
             <p className="text-lg md:text-xl text-white mb-10 max-w-3xl mx-auto leading-relaxed">
-              Exercise your constitutional right to information. File RTI applications for any Rajasthan Government department with our trusted, legal assistance.
+              Exercise your constitutional right to information. File RTI applications for any Jammu and Kashmir Government department with our trusted, legal assistance.
             </p>
           </AnimatedSection>
           
@@ -96,7 +96,7 @@ export const RajasthanHero: React.FC<RajasthanHeroProps> = () => {
           {/* Trust Text */}
           <AnimatedSection animation="fadeIn" delay={700}>
             <p className="text-white/80 text-base md:text-lg mb-8">
-              Trusted by citizens across Rajasthan
+              Trusted by citizens across Jammu and Kashmir
             </p>
           </AnimatedSection>
 

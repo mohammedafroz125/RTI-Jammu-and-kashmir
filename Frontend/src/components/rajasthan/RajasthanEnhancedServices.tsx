@@ -1,12 +1,12 @@
 /**
  * ============================================================================
- * RAJASTHAN ENHANCED SERVICES SECTION
+ * JAMMU AND KASHMIR ENHANCED SERVICES SECTION
  * ============================================================================
  * 
- * Purpose: Interactive two-column service selector for Rajasthan homepage.
+ * Purpose: Interactive two-column service selector for Jammu and Kashmir homepage.
  *          Displays RTI services with detailed information cards.
  * 
- * State Usage: Rajasthan (active) - Used only on homepage
+ * State Usage: Jammu and Kashmir (active) - Used only on homepage
  * 
  * Features:
  * - Left column: Service selector buttons (tab-style)
@@ -22,7 +22,7 @@
  * 5. Custom RTI
  * 6. 15 Minute RTI Consultation
  * 
- * Used by: Home.tsx (Rajasthan homepage)
+ * Used by: Home.tsx (Jammu and Kashmir homepage)
  * ============================================================================
  */
 

@@ -110,11 +110,6 @@ export const RajasthanComprehensiveForm: React.FC = () => {
 
       setShowSuccess(true);
       resetForm();
-      
-      // Redirect to services page after 2 seconds
-      setTimeout(() => {
-        navigate('/services/seamless-online-filing');
-      }, 2000);
     } catch (error) {
       console.error('Form submission error:', error);
       // Error handling is done by the hook
@@ -163,11 +158,19 @@ export const RajasthanComprehensiveForm: React.FC = () => {
           <AnimatedSection animation="fadeInScale" delay={0}>
               <div className="max-w-2xl mx-auto text-center bg-white rounded-2xl p-12 shadow-lg">
               <CheckCircleIcon className="w-20 h-20 text-green-500 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
               <p className="text-lg text-gray-600 mb-6">
-                We'll contact you within 24 hours to proceed with your RTI filing.
+                Your consultation request has been submitted successfully. Our team will contact you within 24 hours to proceed with your RTI filing.
               </p>
-              <p className="text-sm text-gray-500">Redirecting to services page...</p>
+              <button
+                onClick={() => navigate('/services/seamless-online-filing')}
+                className="mt-4 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ backgroundColor: '#0267AD' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1E88E5'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0267AD'}
+              >
+                Continue to RTI Services
+              </button>
             </div>
           </AnimatedSection>
         </div>

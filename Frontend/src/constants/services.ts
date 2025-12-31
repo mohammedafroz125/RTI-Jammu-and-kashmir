@@ -3,7 +3,9 @@
  */
 
 import { ServiceImageMapping } from '../types/services';
-import razorpayImage from '../assets/images/razorpay.jpg';
+
+// Image paths - all images now in public/images
+const razorpayImage = '/images/razorpay.jpg';
 
 // Image mappings for service pages
 export const SERVICE_IMAGES: ServiceImageMapping = {

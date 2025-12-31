@@ -14,11 +14,11 @@ const createPDFPath = (state: string, category: string, fileName: string): strin
   return `${state}/${category}/${fileName}`;
 };
 
-// Helper function for Jammu and Kashmir PDFs (flat folder structure)
-// Maps department name to actual PDF filename in RTI_Jammu_and_Kashmir_All_Departments_FINAL folder
-const createJammuAndKashmirPDFPath = (pdfFileName: string): string => {
-  // Jammu and Kashmir PDFs are in public folder at /assets/PDF/RTI_Jammu_and_Kashmir_All_Departments_FINAL/
-  return `RTI_Jammu_and_Kashmir_All_Departments_FINAL/${pdfFileName}`;
+// Helper function for Jammu and Kashmir PDFs (organized in subfolders)
+// Maps department name to actual PDF filename in RTI_Jammu_and_Kashmir_FULL_CERTIFIED_FINAL folder
+const createJammuAndKashmirPDFPath = (subfolder: string, pdfFileName: string): string => {
+  // Jammu and Kashmir PDFs are in public folder at /assets/PDF/RTI_Jammu_and_Kashmir_FULL_CERTIFIED_FINAL/
+  return `RTI_Jammu_and_Kashmir_FULL_CERTIFIED_FINAL/${subfolder}/${pdfFileName}`;
 };
 
 // Helper function to detect state from department name
@@ -186,77 +186,78 @@ const departmentToPDFMap: PDFMapping = {
   'RTI Telangana State Medical Services & Infrastructure Development Corporation (TSMSIDC)': createPDFPath('telangana', 'RTI Telangana Education & Health', 'RTI TEMPLATE FOR TELANGANA STATE MEDICAL SERVICES & INFRASTRUCTURE DEVELOPMENT CORPORATION (TSMSIDC).pdf'),
 
   // ========== JAMMU AND KASHMIR DEPARTMENTS ==========
-  // All Jammu and Kashmir PDFs are in: /assets/PDF/RTI_Jammu_and_Kashmir_All_Departments_FINAL/
-  // RTI Jammu and Kashmir Police & Home Affairs
-  'RTI Jammu and Kashmir Home Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Home_Department.pdf'),
-  'RTI Jammu and Kashmir Police Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Police_Department.pdf'),
-  'RTI Jammu and Kashmir Anti-Corruption Bureau (ACB)': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Anti-Corruption_Bureau.pdf'),
-  'RTI Jammu and Kashmir Prisons Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Prisons_Department.pdf'),
-  'RTI Jammu and Kashmir Prosecution Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Prosecution_Department.pdf'),
-  'RTI Jammu and Kashmir Disaster Management & Relief Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Disaster_Management_&_Relief_Department.pdf'),
+  // All Jammu and Kashmir PDFs are in: /assets/PDF/RTI_Jammu_and_Kashmir_FULL_CERTIFIED_FINAL/
+  // Organized in subfolders by category
+  
+  // RTI Jammu and Kashmir General Administration & Home Affairs
+  'RTI Jammu and Kashmir General Administration Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_General_Administration_Department.pdf'),
+  'RTI Jammu and Kashmir Home Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_Home_Department.pdf'),
+  'RTI Jammu and Kashmir Police Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_Police_Department.pdf'),
+  'RTI Jammu and Kashmir Prisons Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_Prisons_Department.pdf'),
+  'RTI Jammu and Kashmir Law, Justice & Parliamentary Affairs Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_Law_Justice_and_Parliamentary_Affairs_Department.pdf'),
+  'RTI Jammu and Kashmir Disaster Management, Relief, Rehabilitation & Reconstruction Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_Disaster_Management_Relief_Rehabilitation_and_Reconstruction_Department.pdf'),
+  'RTI Jammu and Kashmir Election Department': createJammuAndKashmirPDFPath('General Administration & Home Affairs', 'RTI_Jammu_and_Kashmir_Election_Department.pdf'),
 
-  // RTI Jammu and Kashmir Finance, Tax & Revenue
-  'RTI Jammu and Kashmir Finance Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Finance_Department.pdf'),
-  'RTI Jammu and Kashmir Revenue Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Revenue_Department.pdf'),
-  'RTI Jammu and Kashmir Commercial Taxes (GST) Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Commercial_Taxes_(GST)_Department.pdf'),
-  'RTI Jammu and Kashmir Registration & Stamps Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Registration_&_Stamps_Department.pdf'),
-  'RTI Jammu and Kashmir Treasuries & Accounts Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Treasuries_&_Accounts_Department.pdf'),
-  'RTI Jammu and Kashmir Excise Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Excise_Department.pdf'),
+  // RTI Jammu and Kashmir Finance, Planning & Revenue
+  'RTI Jammu and Kashmir Finance Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Finance_Department.pdf'),
+  'RTI Jammu and Kashmir Planning, Development & Monitoring Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Planning_Development_and_Monitoring_Department.pdf'),
+  'RTI Jammu and Kashmir Revenue Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Revenue_Department.pdf'),
+  'RTI Jammu and Kashmir Excise & Taxation Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Excise_and_Taxation_Department.pdf'),
+  'RTI Jammu and Kashmir Registration & Stamps Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Registration_and_Stamps_Department.pdf'),
+  'RTI Jammu and Kashmir Treasuries & Accounts Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Treasuries_and_Accounts_Department.pdf'),
+  'RTI Jammu and Kashmir Estates Department': createJammuAndKashmirPDFPath('Finance, Planning & Revenue', 'RTI_Jammu_and_Kashmir_Estates_Department.pdf'),
 
-  // RTI Jammu and Kashmir Transport & Public Infrastructure
-  'RTI Jammu and Kashmir Transport Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Transport_Department.pdf'),
-  'RTI Jammu and Kashmir Public Works Department (PWD)': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Public_Works_Department.pdf'),
-  'RTI Jammu and Kashmir Urban Development Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Urban_Development_Department.pdf'),
-  'RTI Jammu and Kashmir Local Self Government Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Local_Self_Government_Department.pdf'),
-  'RTI Jammu and Kashmir Srinagar Development Authority': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Srinagar_Development_Authority.pdf'),
-  'RTI Jammu and Kashmir Jammu and Kashmir State Road Development Corporation': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Jammu_and_Kashmir_State_Road_Development_Corporation.pdf'),
+  // RTI Jammu and Kashmir Education & Skill Development
+  'RTI Jammu and Kashmir School Education Department': createJammuAndKashmirPDFPath('Education & Skill Development', 'RTI_Jammu_and_Kashmir_School_Education_Department.pdf'),
+  'RTI Jammu and Kashmir Higher Education Department': createJammuAndKashmirPDFPath('Education & Skill Development', 'RTI_Jammu_and_Kashmir_Higher_Education_Department.pdf'),
+  'RTI Jammu and Kashmir Technical Education Department': createJammuAndKashmirPDFPath('Education & Skill Development', 'RTI_Jammu_and_Kashmir_Technical_Education_Department.pdf'),
+  'RTI Jammu and Kashmir Skill Development Department': createJammuAndKashmirPDFPath('Education & Skill Development', 'RTI_Jammu_and_Kashmir_Skill_Development_Department.pdf'),
+  'RTI Jammu and Kashmir Youth Services & Sports Department': createJammuAndKashmirPDFPath('Education & Skill Development', 'RTI_Jammu_and_Kashmir_Youth_Services_and_Sports_Department.pdf'),
+  'RTI Jammu and Kashmir Science & Technology Department': createJammuAndKashmirPDFPath('Education & Skill Development', 'RTI_Jammu_and_Kashmir_Science_and_Technology_Department.pdf'),
 
-  // RTI Jammu and Kashmir Education, Skill & Health
-  'RTI Jammu and Kashmir School Education Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_School_Education_Department.pdf'),
-  'RTI Jammu and Kashmir Higher Education Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Higher_Education_Department.pdf'),
-  'RTI Jammu and Kashmir Technical Education Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Technical_Education_Department.pdf'),
-  'RTI Jammu and Kashmir Medical & Health Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Medical_&_Health_Department.pdf'),
-  'RTI Jammu and Kashmir Medical Education Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Medical_Education_Department.pdf'),
-  'RTI Jammu and Kashmir Skill, Employment & Entrepreneurship Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Skill,_Employment_&_Entrepreneurship_Department.pdf'),
+  // RTI Jammu and Kashmir Health & Medical Services
+  'RTI Jammu and Kashmir Health & Medical Education Department': createJammuAndKashmirPDFPath('Health & Medical Services', 'RTI_Jammu_and_Kashmir_Health_and_Medical_Education_Department.pdf'),
+  'RTI Jammu and Kashmir AYUSH Department': createJammuAndKashmirPDFPath('Health & Medical Services', 'RTI_Jammu_and_Kashmir_AYUSH_Department.pdf'),
+  'RTI Jammu and Kashmir Food, Civil Supplies & Consumer Affairs Department': createJammuAndKashmirPDFPath('Health & Medical Services', 'RTI_Jammu_and_Kashmir_Food_Civil_Supplies_and_Consumer_Affairs_Department.pdf'),
 
-  // RTI Jammu and Kashmir Agriculture, Animal & Rural Development
-  'RTI Jammu and Kashmir Agriculture Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Agriculture_Department.pdf'),
-  'RTI Jammu and Kashmir Horticulture Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Horticulture_Department.pdf'),
-  'RTI Jammu and Kashmir Animal Husbandry Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Animal_Husbandry_Department.pdf'),
-  'RTI Jammu and Kashmir Rural Development Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Rural_Development_Department.pdf'),
-  'RTI Jammu and Kashmir Panchayati Raj Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Panchayati_Raj_Department.pdf'),
-  'RTI Jammu and Kashmir Watershed Development Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Watershed_Development_Department.pdf'),
+  // RTI Jammu and Kashmir Infrastructure & Development
+  'RTI Jammu and Kashmir Public Works (R&B) Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Public_Works_(RandB)_Department.pdf'),
+  'RTI Jammu and Kashmir Housing & Urban Development Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Housing_and_Urban_Development_Department.pdf'),
+  'RTI Jammu and Kashmir Transport Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Transport_Department.pdf'),
+  'RTI Jammu and Kashmir Power Development Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Power_Development_Department.pdf'),
+  'RTI Jammu and Kashmir Jal Shakti Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Jal_Shakti_Department.pdf'),
+  'RTI Jammu and Kashmir Rural Development Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Rural_Development_Department.pdf'),
+  'RTI Jammu and Kashmir Panchayati Raj Department': createJammuAndKashmirPDFPath('Infrastructure & Development', 'RTI_Jammu_and_Kashmir_Panchayati_Raj_Department.pdf'),
 
-  // RTI Jammu and Kashmir Social Justice & Welfare
-  'RTI Jammu and Kashmir Social Justice & Empowerment Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Social_Justice_&_Empowerment_Department.pdf'),
-  'RTI Jammu and Kashmir Women & Child Development Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Women_&_Child_Development_Department.pdf'),
-  'RTI Jammu and Kashmir Minority Affairs Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Minority_Affairs_Department.pdf'),
-  'RTI Jammu and Kashmir Labour Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Labour_Department.pdf'),
-  'RTI Jammu and Kashmir Empowerment of Persons with Disabilities Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Empowerment_of_Persons_with_Disabilities_Department.pdf'),
+  // RTI Jammu and Kashmir Agriculture & Rural Economy
+  'RTI Jammu and Kashmir Agriculture Production & Farmer Welfare Department': createJammuAndKashmirPDFPath('Agriculture & Rural Economy', 'RTI_Jammu_and_Kashmir_Agriculture_Production_and_Farmer_Welfare_Department.pdf'),
+  'RTI Jammu and Kashmir Horticulture Department': createJammuAndKashmirPDFPath('Agriculture & Rural Economy', 'RTI_Jammu_and_Kashmir_Horticulture_Department.pdf'),
+  'RTI Jammu and Kashmir Animal & Sheep Husbandry Department': createJammuAndKashmirPDFPath('Agriculture & Rural Economy', 'RTI_Jammu_and_Kashmir_Animal_and_Sheep_Husbandry_Department.pdf'),
+  'RTI Jammu and Kashmir Cooperative Department': createJammuAndKashmirPDFPath('Agriculture & Rural Economy', 'RTI_Jammu_and_Kashmir_Cooperative_Department.pdf'),
+  'RTI Jammu and Kashmir Fisheries Department': createJammuAndKashmirPDFPath('Agriculture & Rural Economy', 'RTI_Jammu_and_Kashmir_Fisheries_Department.pdf'),
 
-  // RTI Jammu and Kashmir Industries, Mines & MSME
-  'RTI Jammu and Kashmir Industries Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Industries_Department.pdf'),
-  'RTI Jammu and Kashmir MSME & Export Promotion Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_MSME_&_Export_Promotion_Department.pdf'),
-  'RTI Jammu and Kashmir Mines & Geology Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Mines_&_Geology_Department.pdf'),
-  'RTI Jammu and Kashmir Industrial Development': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Industrial_Development.pdf'),
-  'RTI Jammu and Kashmir Handloom & Handicrafts Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Handloom_&_Handicrafts_Department.pdf'),
+  // RTI Jammu and Kashmir Industries, Commerce & Tourism
+  'RTI Jammu and Kashmir Industries & Commerce Department': createJammuAndKashmirPDFPath('Industries, Commerce & Tourism', 'RTI_Jammu_and_Kashmir_Industries_and_Commerce_Department.pdf'),
+  'RTI Jammu and Kashmir Handloom & Handicrafts Department': createJammuAndKashmirPDFPath('Industries, Commerce & Tourism', 'RTI_Jammu_and_Kashmir_Handloom_and_Handicrafts_Department.pdf'),
+  'RTI Jammu and Kashmir Tourism Department': createJammuAndKashmirPDFPath('Industries, Commerce & Tourism', 'RTI_Jammu_and_Kashmir_Tourism_Department.pdf'),
+  'RTI Jammu and Kashmir Geology & Mining Department': createJammuAndKashmirPDFPath('Industries, Commerce & Tourism', 'RTI_Jammu_and_Kashmir_Geology_and_Mining_Department.pdf'),
 
-  // RTI Jammu and Kashmir Environment, Water & Energy
-  'RTI Jammu and Kashmir Forest Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Forest_Department.pdf'),
-  'RTI Jammu and Kashmir Environment Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Environment_Department.pdf'),
-  'RTI Jammu and Kashmir Water Resources Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Water_Resources_Department.pdf'),
-  'RTI Jammu and Kashmir Public Health Engineering Department (PHED)': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Public_Health_Engineering_Department.pdf'),
-  'RTI Jammu and Kashmir Power Development Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Power_Development_Department.pdf'),
+  // RTI Jammu and Kashmir Environment & Forest
+  'RTI Jammu and Kashmir Forest, Ecology & Environment Department': createJammuAndKashmirPDFPath('Environment & Forest', 'RTI_Jammu_and_Kashmir_Forest_Ecology_and_Environment_Department.pdf'),
+  'RTI Jammu and Kashmir Wildlife Protection Department': createJammuAndKashmirPDFPath('Environment & Forest', 'RTI_Jammu_and_Kashmir_Wildlife_Protection_Department.pdf'),
 
-  // RTI Jammu and Kashmir Information, IT & Public Relations
-  'RTI Jammu and Kashmir Information Technology & Communication Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Information_Technology_&_Communication_Department.pdf'),
-  'RTI Jammu and Kashmir e-Governance Services': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_e-Governance_Services.pdf'),
-  'RTI Jammu and Kashmir Information & Public Relations Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Information_&_Public_Relations_Department.pdf'),
+  // RTI Jammu and Kashmir Social Welfare & Employment
+  'RTI Jammu and Kashmir Social Welfare Department': createJammuAndKashmirPDFPath('Social Welfare & Employment', 'RTI_Jammu_and_Kashmir_Social_Welfare_Department.pdf'),
+  'RTI Jammu and Kashmir Labour & Employment Department': createJammuAndKashmirPDFPath('Social Welfare & Employment', 'RTI_Jammu_and_Kashmir_Labour_and_Employment_Department.pdf'),
+  'RTI Jammu and Kashmir Tribal Affairs Department': createJammuAndKashmirPDFPath('Social Welfare & Employment', 'RTI_Jammu_and_Kashmir_Tribal_Affairs_Department.pdf'),
+  'RTI Jammu and Kashmir Backward Classes & Minorities Department': createJammuAndKashmirPDFPath('Social Welfare & Employment', 'RTI_Jammu_and_Kashmir_Backward_Classes_and_Minorities_Department.pdf'),
 
-  // RTI Jammu and Kashmir Culture, Tourism & Religious Affairs
-  'RTI Jammu and Kashmir Tourism Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Tourism_Department.pdf'),
-  'RTI Jammu and Kashmir Art, Culture & Archaeology Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Art,_Culture_&_Archaeology_Department.pdf'),
-  'RTI Jammu and Kashmir Archives Department': createJammuAndKashmirPDFPath('RTI_Jammu_and_Kashmir_Archives_Department.pdf'),
+  // RTI Jammu and Kashmir Information Technology & Culture
+  'RTI Jammu and Kashmir Information Technology Department': createJammuAndKashmirPDFPath('Information Technology & Culture', 'RTI_Jammu_and_Kashmir_Information_Technology_Department.pdf'),
+  'RTI Jammu and Kashmir e-Governance Department': createJammuAndKashmirPDFPath('Information Technology & Culture', 'RTI_Jammu_and_Kashmir_e-Governance_Department.pdf'),
+  'RTI Jammu and Kashmir Information & Public Relations Department': createJammuAndKashmirPDFPath('Information Technology & Culture', 'RTI_Jammu_and_Kashmir_Information_and_Public_Relations_Department.pdf'),
+  'RTI Jammu and Kashmir Culture Department': createJammuAndKashmirPDFPath('Information Technology & Culture', 'RTI_Jammu_and_Kashmir_Culture_Department.pdf'),
+  'RTI Jammu and Kashmir Archives, Archaeology & Museums Department': createJammuAndKashmirPDFPath('Information Technology & Culture', 'RTI_Jammu_and_Kashmir_Archives_Archaeology_and_Museums_Department.pdf'),
 };
 
 /**

@@ -13,12 +13,7 @@ const SendIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// FUTURE-USE: ClockIcon component (currently unused)
-// const ClockIcon = ({ className }: { className?: string }) => (
-//   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-//   </svg>
-// );
+
 
 const PencilIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,17 +83,17 @@ export const RajasthanEnhancedHowItWorks: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <AnimatedSection key={step.title} animation="fadeInScale" delay={400 + index * 100}>
-                <div className="relative group">
-                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 h-full border border-gray-200">
-                  <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="relative group h-full">
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 h-full border border-gray-200 flex flex-col min-h-[280px]">
+                  <div className="relative z-10 flex flex-col items-center text-center h-full">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors duration-300" style={{ backgroundColor: '#C8E0F0' }}>
-                      <step.icon className="w-7 h-7 text-[#0267AD]" />
+                      <step.icon className="w-7 h-7" style={{ color: '#0267AD' }} />
                     </div>
                     <span className="text-xs font-bold mb-2" style={{ color: '#1E88E5' }}>STEP {step.step}</span>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 text-sm font-normal leading-relaxed">
+                    <p className="text-gray-600 text-sm font-normal leading-relaxed flex-grow">
                       {step.description}
                     </p>
                   </div>

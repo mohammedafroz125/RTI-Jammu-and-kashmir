@@ -9,25 +9,25 @@ const QuoteIcon = ({ className }: { className?: string }) => (
 
 const testimonials = [
   {
-    quote: "The RTI service helped me get my land records within 30 days. The process was simple and the team guided me throughout. Highly recommended.",
-    name: "Ramesh Kumar",
+    quote: "I needed my land records from the Revenue Department in Srinagar. FileMyRTI helped me file the application correctly and I received the information within 30 days. Excellent service for Jammu and Kashmir residents.",
+    name: "Mohammad Asif",
     location: "Srinagar, Jammu and Kashmir",
-    role: "Farmer",
-    image: "/images/rajasthan2.webp"
+    role: "Business Owner",
+    image: "/images/mohammedasif.webp"
   },
   {
-    quote: "I was struggling to get information about government schemes. With this RTI service, I received all details about subsidy programs in my district.",
-    name: "Sunita Devi",
+    quote: "As a social worker in Jammu, I needed information about government welfare schemes. The team helped me file RTI applications for multiple departments. The process was smooth and responses came on time.",
+    name: "Priya Sharma",
     location: "Jammu, Jammu and Kashmir",
     role: "Social Worker",
-    image: "/images/rajasthan1.webp"
+    image: "/images/priya.webp"
   },
   {
-    quote: "Professional and reliable service. They helped me file an RTI about road construction funds in my village. The response came within the stipulated time.",
-    name: "Mahendra Singh",
+    quote: "I wanted to know about the status of road construction in my area in Anantnag. FileMyRTI helped me file an RTI to the Public Works Department. The response was clear and I got all the information I needed.",
+    name: "Abdul Rashid",
     location: "Anantnag, Jammu and Kashmir",
-    role: "Retired Teacher",
-    image: "/images/rajasthan3.webp"
+    role: "Community Leader",
+    image: "/images/abdulrashid.webp"
   }
 ];
 

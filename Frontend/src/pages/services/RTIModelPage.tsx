@@ -597,13 +597,15 @@ export const RTIModelPage: React.FC = () => {
         >
           <div className="main-content-responsive">
             {/* Breadcrumb Navigation */}
-            <Breadcrumb
-              items={[
-                { name: 'Home', path: '/' },
-                { name: 'Services', path: '/services' },
-                { name: model.name, path: `/services/${modelSlug}` }
-              ]}
-            />
+            <div className="w-full bg-white border-b border-gray-200" style={{ paddingTop: '48px' }}>
+              <Breadcrumb
+                items={[
+                  { name: 'Home', path: '/' },
+                  { name: 'Services', path: '/services' },
+                  { name: model.name, path: `/services/${modelSlug}` }
+                ]}
+              />
+            </div>
 
             {/* Service Hero - Appears first on small devices */}
             <div className="md:hidden container-responsive max-w-7xl mx-auto px-4 md:px-6 pt-4">

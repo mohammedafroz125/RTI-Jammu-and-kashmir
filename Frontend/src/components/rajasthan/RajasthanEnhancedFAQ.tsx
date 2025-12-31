@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatedSection } from '../common/AnimatedSection';
 
-// FUTURE-USE: HelpCircleIcon component (currently unused)
-// const HelpCircleIcon = ({ className }: { className?: string }) => (
-//   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-//   </svg>
-// );
-
 const ChevronDownIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -20,12 +13,8 @@ const faqs = [
     answer: "RTI (Right to Information) is a fundamental right under the RTI Act 2005 that allows any Indian citizen to request information from public authorities. You can file RTI applications to seek information about government activities, decisions, public expenditure, and services provided by Jammu and Kashmir government departments.",
   },
   {
-    question: "What is the fee for filing an RTI application in Jammu and Kashmir?",
-    answer: "The RTI application fee in Jammu and Kashmir is ₹10 for state departments. BPL (Below Poverty Line) cardholders are exempted from paying fees. Additional charges may apply for photocopies (₹2 per page) and other information formats.",
-  },
-  {
     question: "How long does it take to receive a response?",
-    answer: "As per the RTI Act, the concerned Public Information Officer (PIO) must provide information within 30 days from the date of receipt. For matters concerning life and liberty, the response must be given within 48 hours.",
+    answer: "As per the RTI Act, the concerned Public Information Officer (PIO) must provide information within 30 days from the date of receipt.",
   },
   {
     question: "Do I need to visit any government office to file RTI?",
@@ -37,15 +26,11 @@ const faqs = [
   },
   {
     question: "What documents do I need to file an RTI?",
-    answer: "For filing an RTI, you primarily need to clearly describe the information you're seeking. No identity proof is mandatory for filing, but having Aadhaar or voter ID helps for communication purposes. For BPL fee exemption, you'll need your BPL card.",
+    answer: "For filing an RTI in Jammu and Kashmir, you primarily need to clearly describe the information you're seeking. No identity proof is mandatory for filing, but having Aadhaar or voter ID helps for communication purposes. For BPL fee exemption, you'll need your BPL card.",
   },
   {
     question: "Can I file RTI anonymously?",
-    answer: "Yes, we offer anonymous RTI filing services where your identity is protected throughout the process. Our team files the application on behalf of our organization, ensuring your privacy while exercising your right to information.",
-  },
-  {
-    question: "Can I file RTI from outside Jammu and Kashmir?",
-    answer: "Yes, you can file an RTI for Jammu and Kashmir departments from anywhere in India. The application can be sent by post or submitted online. You don't need to be physically present in Jammu and Kashmir to file an RTI application.",
+    answer: "Yes, we offer anonymous RTI filing services for Jammu and Kashmir departments where your identity is protected throughout the process. Our team files the application on behalf of our organization, ensuring your privacy while exercising your right to information.",
   },
 ];
 

@@ -29,12 +29,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from '../common/AnimatedSection';
-import SOFIcon from '../../assets/images/SOFIcon.webp';
-import AnonyIcon from '../../assets/images/AnonyIcon.webp';
-import FirstIcon from '../../assets/images/FirstIcon.webp';
-import BulkIcon from '../../assets/images/BulkIcon.webp';
-import CustomIcon from '../../assets/images/CustomIcon.webp';
-import Icon15min from '../../assets/images/15minIcon.webp';
+
+// Image paths - all images now in public/images
+const SOFIcon = '/images/SOFIcon.webp';
+const AnonyIcon = '/images/AnonyIcon.webp';
+const FirstIcon = '/images/FirstIcon.webp';
+const BulkIcon = '/images/BulkIcon.webp';
+const CustomIcon = '/images/CustomIcon.webp';
+const Icon15min = '/images/15minIcon.webp';
 
 const services = [
   {
@@ -47,7 +49,7 @@ const services = [
     isQuote: false,
     route: "/services/seamless-online-filing",
     buttonText: "File Now",
-    features: ["Expert drafting", "Online submission", "Timely dispatch", "Application tracking"]
+    features: ["Expert drafting", "Online submission", "Timely dispatch"]
   },
   {
     icon: AnonyIcon,
@@ -71,7 +73,7 @@ const services = [
     isQuote: false,
     route: "/services/1st-appeal",
     buttonText: "Appeal Now",
-    features: ["Expert appeal drafting", "Legal guidance", "Quick submission", "Appeal tracking"]
+    features: ["Expert appeal drafting", "Legal guidance", "Quick submission"]
   },
   {
     icon: BulkIcon,
@@ -83,7 +85,7 @@ const services = [
     isQuote: true,
     route: "/services/bulk",
     buttonText: "Request Quote",
-    features: ["Volume discounts", "Bulk processing", "Organized tracking", "Dedicated support"]
+    features: ["Volume discounts", "Bulk processing", "Organized management", "Dedicated support"]
   },
   {
     icon: CustomIcon,

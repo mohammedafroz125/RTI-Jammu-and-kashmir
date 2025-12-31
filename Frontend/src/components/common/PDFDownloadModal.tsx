@@ -20,7 +20,7 @@
  * 3. Fallback to direct Vite import (for Delhi/Telangana)
  * 
  * Special Handling:
- * - Rajasthan: PDFs stored in public folder (flat structure)
+ * - Jammu and Kashmir: PDFs stored in public folder (organized in subfolders)
  * - Delhi/Telangana: PDFs in src/assets/PDF/ (nested structure)
  * 
  * Used by: RTIByDepartment, StateDepartments, and other department listing components
@@ -147,21 +147,21 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
       // Download the PDF - try multiple approaches
       // Extract state, category and filename from pdfPath
       // Format for Delhi/Telangana: "state/category/filename.pdf"
-      // Format for Jammu and Kashmir: "RTI_Jammu_and_Kashmir_All_Departments_FINAL/filename.pdf"
+      // Format for Jammu and Kashmir: "RTI_Jammu_and_Kashmir_FULL_CERTIFIED_FINAL/subfolder/filename.pdf"
       const pathParts = pdfPath.split('/');
-      const isJammuAndKashmir = pathParts[0] === 'RTI_Jammu_and_Kashmir_All_Departments_FINAL';
+      const isJammuAndKashmir = pathParts[0] === 'RTI_Jammu_and_Kashmir_FULL_CERTIFIED_FINAL';
       const state = isJammuAndKashmir ? 'jammu-and-kashmir' : pathParts[0]; // e.g., "delhi", "telangana", or "jammu-and-kashmir"
-      const category = isJammuAndKashmir ? '' : encodeURIComponent(pathParts[1]);
-      const filename = isJammuAndKashmir ? encodeURIComponent(pathParts[1]) : encodeURIComponent(pathParts[2]);
+      const category = isJammuAndKashmir ? encodeURIComponent(pathParts[1]) : encodeURIComponent(pathParts[1]);
+      const filename = isJammuAndKashmir ? encodeURIComponent(pathParts[2]) : encodeURIComponent(pathParts[2]);
 
       let downloadSuccess = false;
       let lastError: Error | null = null;
 
       // Approach 1: Try backend API (with timeout)
       try {
-        // For Jammu and Kashmir, use the flat folder structure
+        // For Jammu and Kashmir, use the subfolder structure
         const apiUrl = isJammuAndKashmir 
-          ? `${apiBaseUrl}/api/v1/pdf/jammu-and-kashmir/${pathParts[0]}/${filename}`
+          ? `${apiBaseUrl}/api/v1/pdf/jammu-and-kashmir/${pathParts[0]}/${category}/${filename}`
           : `${apiBaseUrl}/api/v1/pdf/${state}/${category}/${filename}`;
 
         // Create a timeout promise
@@ -208,11 +208,12 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
       // Approach 2: Try public folder (if PDFs are copied there)
       if (!downloadSuccess) {
         try {
-          // For Jammu and Kashmir, use the flat folder structure
+          // For Jammu and Kashmir, use the subfolder structure
           const decodedFilename = decodeURIComponent(filename);
+          const decodedCategory = decodeURIComponent(category);
           const publicPath = isJammuAndKashmir
-            ? `/assets/PDF/${pathParts[0]}/${decodedFilename}`
-            : `/assets/PDF/${state}/${decodeURIComponent(category)}/${decodedFilename}`;
+            ? `/assets/PDF/${pathParts[0]}/${decodedCategory}/${decodedFilename}`
+            : `/assets/PDF/${state}/${decodedCategory}/${decodedFilename}`;
 
           // Open PDF directly from public folder URL - browser will use filename as title
           // This avoids "anonymous" tab name issue
@@ -232,7 +233,8 @@ export const PDFDownloadModal: React.FC<PDFDownloadModalProps> = ({
           // So we'll skip direct import for Jammu and Kashmir and use public path instead
           if (isJammuAndKashmir) {
             const decodedFilename = decodeURIComponent(filename);
-            const publicPath = `/assets/PDF/${pathParts[0]}/${decodedFilename}`;
+            const decodedCategory = decodeURIComponent(category);
+            const publicPath = `/assets/PDF/${pathParts[0]}/${decodedCategory}/${decodedFilename}`;
             window.open(publicPath, '_blank');
             downloadSuccess = true;
             console.log('Successfully opened Jammu and Kashmir PDF from public folder');

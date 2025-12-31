@@ -4,12 +4,14 @@ import { StateHero as StateHeroData } from '../../data/states';
 import { AppointmentModal } from './AppointmentModal';
 // Lazy load non-critical components to improve LCP
 const PublicAuthoritiesList = lazy(() => import('./PublicAuthoritiesList').then(m => ({ default: m.PublicAuthoritiesList })));
-import SOFIcon from '../../assets/images/SOFIcon.webp';
-import AnonyIcon from '../../assets/images/AnonyIcon.webp';
-import FirstIcon from '../../assets/images/FirstIcon.webp';
-import BulkIcon from '../../assets/images/BulkIcon.webp';
-import CustomIcon from '../../assets/images/CustomIcon.webp';
-import Icon15min from '../../assets/images/15minIcon.webp';
+
+// Image paths - all images now in public/images
+const SOFIcon = '/images/SOFIcon.webp';
+const AnonyIcon = '/images/AnonyIcon.webp';
+const FirstIcon = '/images/FirstIcon.webp';
+const BulkIcon = '/images/BulkIcon.webp';
+const CustomIcon = '/images/CustomIcon.webp';
+const Icon15min = '/images/15minIcon.webp';
 
 // Add fade-in animation styles
 const fadeInStyle = `

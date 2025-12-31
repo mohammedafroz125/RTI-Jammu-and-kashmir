@@ -9,6 +9,9 @@ export interface JammuAndKashmirDepartmentSection {
   items: string[];
 }
 
+// Alias for Rajasthan (using same structure as Jammu and Kashmir)
+export type DepartmentSection = JammuAndKashmirDepartmentSection;
+
 export const jammuAndKashmirDepartments: JammuAndKashmirDepartmentSection[] = [
   {
     category: 'RTI Jammu and Kashmir General Administration & Home Affairs',
@@ -111,4 +114,7 @@ export const jammuAndKashmirDepartments: JammuAndKashmirDepartmentSection[] = [
     ],
   },
 ];
+
+// Export for Rajasthan (using Jammu and Kashmir structure for now)
+export const rajasthanDepartments: DepartmentSection[] = jammuAndKashmirDepartments;
 

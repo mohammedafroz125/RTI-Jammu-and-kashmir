@@ -87,7 +87,7 @@ export const RajasthanEnhancedHowItWorks: React.FC = () => {
                 <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 h-full border border-gray-200 flex flex-col min-h-[280px]">
                   <div className="relative z-10 flex flex-col items-center text-center h-full">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors duration-300" style={{ backgroundColor: '#C8E0F0' }}>
-                      <step.icon className="w-7 h-7" style={{ color: '#0267AD' }} />
+                      <step.icon className="w-7 h-7 text-[#0267AD]" />
                     </div>
                     <span className="text-xs font-bold mb-2" style={{ color: '#1E88E5' }}>STEP {step.step}</span>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">

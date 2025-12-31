@@ -184,11 +184,11 @@ export const RajasthanEnhancedServices: React.FC = () => {
                 className={`w-full bg-white rounded-xl border-2 border-gray-200 shadow-lg overflow-hidden transition-opacity duration-300 ${
                   isTransitioning ? 'opacity-0' : 'opacity-100'
                 }`}
-                style={{ borderColor: '#E5E7EB' }}
+                style={{ borderColor: '#E5E7EB', minHeight: '400px' }}
               >
-              <div className="p-6">
+              <div className="p-6 md:p-8">
                 {/* Header */}
-                <div className="flex items-start gap-6 mb-4">
+                <div className="flex items-start gap-6 mb-6">
                   <div 
                     className="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 rounded-2xl overflow-hidden border-2"
                     style={{ 
@@ -218,33 +218,33 @@ export const RajasthanEnhancedServices: React.FC = () => {
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                       {currentService.title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                       {currentService.fullDescription}
                     </p>
                   </div>
                 </div>
 
                 {/* Features */}
-                <div className="mb-4">
-                  <h4 className="text-xs font-semibold text-gray-700 mb-2">Key Features:</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div className="mb-6">
+                  <h4 className="text-sm md:text-base font-semibold text-gray-700 mb-3">Key Features:</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {currentService.features.map((feature, index) => (
                       <div 
                         key={index}
-                        className="flex items-center gap-1.5 p-1.5 rounded-lg"
+                        className="flex items-center gap-2 p-2.5 rounded-lg"
                         style={{ backgroundColor: '#F0F7FA' }}
                       >
-                        <svg className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#0267AD' }} fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 flex-shrink-0" style={{ color: '#0267AD' }} fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-xs text-gray-700">{feature}</span>
+                        <span className="text-xs md:text-sm text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Price and CTA */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-gray-200">
                   <div>
                     <div className="flex items-baseline gap-2">
                       <span 

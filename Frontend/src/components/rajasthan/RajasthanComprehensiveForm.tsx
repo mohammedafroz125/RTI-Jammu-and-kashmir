@@ -25,7 +25,7 @@
  * ============================================================================
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useConsultationForm } from '../../hooks/useConsultationForm';
 import { consultationsAPI } from '../../services/api';
@@ -95,6 +95,20 @@ export const RajasthanComprehensiveForm: React.FC = () => {
 
   const [showSuccess, setShowSuccess] = useState(false);
 
+  // Auto-dismiss thank you message after readable content time
+  // Reading time calculation: "Thank You!" (2 words) + message (20 words) = ~22 words
+  // Average reading speed: 200-250 words/minute = ~5-6 seconds for content
+  // Adding buffer for processing: Total ~8 seconds
+  useEffect(() => {
+    if (showSuccess) {
+      const timer = setTimeout(() => {
+        setShowSuccess(false); // Hide thank you message and show form again
+      }, 8000); // 8 seconds - enough time to read the thank you message
+
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccess]);
+
   const onSubmit = async (data: typeof formData) => {
     try {
       // Submit to consultations API
@@ -151,32 +165,6 @@ export const RajasthanComprehensiveForm: React.FC = () => {
     },
   ];
 
-  if (showSuccess) {
-    return (
-      <section id="application-form" className="py-12 md:py-16 bg-white">
-        <div className="container-responsive max-w-7xl mx-auto px-4">
-          <AnimatedSection animation="fadeInScale" delay={0}>
-              <div className="max-w-2xl mx-auto text-center bg-white rounded-2xl p-12 shadow-lg">
-              <CheckCircleIcon className="w-20 h-20 text-green-500 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Your consultation request has been submitted successfully. Our team will contact you within 24 hours to proceed with your RTI filing.
-              </p>
-              <button
-                onClick={() => navigate('/services/seamless-online-filing')}
-                className="mt-4 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: '#0267AD' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1E88E5'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0267AD'}
-              >
-                Continue to RTI Services
-              </button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="application-form" className="py-12 md:py-16 bg-white">
@@ -210,16 +198,36 @@ export const RajasthanComprehensiveForm: React.FC = () => {
             </AnimatedSection>
           </div>
 
-          {/* Right - Form */}
+          {/* Right - Form or Thank You Message */}
           <div className="flex flex-col h-full">
-            <AnimatedSection animation="slideLeft" delay={300}>
-            <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleSubmit(onSubmit);
-              }}
-              className="bg-white rounded-2xl p-4 md:p-5 border border-gray-200 shadow-lg h-full flex flex-col"
-            >
+            {showSuccess ? (
+              <AnimatedSection animation="fadeInScale" delay={0}>
+                <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 shadow-lg h-full flex flex-col items-center justify-center text-center">
+                  <CheckCircleIcon className="w-16 h-16 md:w-20 md:h-20 text-green-500 mx-auto mb-4" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Thank You!</h2>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Your consultation request has been submitted successfully. Our team will contact you within 24 hours to proceed with your RTI filing.
+                  </p>
+                  <button
+                    onClick={() => setShowSuccess(false)}
+                    className="mt-2 text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+                    style={{ backgroundColor: '#0267AD' }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1E88E5'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0267AD'}
+                  >
+                    Submit Another Request
+                  </button>
+                </div>
+              </AnimatedSection>
+            ) : (
+              <AnimatedSection animation="slideLeft" delay={300}>
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSubmit(onSubmit);
+                }}
+                className="bg-white rounded-2xl p-4 md:p-5 border border-gray-200 shadow-lg h-full flex flex-col"
+              >
               <div className="space-y-2.5 flex-grow overflow-hidden">
                 {formFields.map((field, index) => (
                   <AnimatedSection key={field.name} animation="slideUp" delay={300 + index * 50}>
@@ -304,6 +312,7 @@ export const RajasthanComprehensiveForm: React.FC = () => {
               </p>
             </form>
             </AnimatedSection>
+            )}
           </div>
         </div>
       </div>

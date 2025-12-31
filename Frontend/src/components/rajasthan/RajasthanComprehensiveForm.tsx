@@ -26,7 +26,6 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useConsultationForm } from '../../hooks/useConsultationForm';
 import { consultationsAPI } from '../../services/api';
 import { AnimatedSection } from '../common/AnimatedSection';
@@ -83,7 +82,6 @@ const CheckCircleIcon = ({ className }: { className?: string }) => (
 // );
 
 export const RajasthanComprehensiveForm: React.FC = () => {
-  const navigate = useNavigate();
   const {
     formData,
     errors,
